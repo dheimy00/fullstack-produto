@@ -1,0 +1,51 @@
+<div class="panel-body">
+    <h2>Cadastro</h2>
+    <hr>
+      <div class="m-2">
+    <form novalidate [formGroup]="form" (ngSubmit)="submitForm(form)">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label>Nome<span>*</span></label>
+              <input class="form-control" name="nome" [(ngModel)]="novoProduto.nome" formControlName="nome" />
+              <ul class="text-danger list-unstyled" 
+              *ngIf="(formSubmitted || form.controls['nome'].dirty) && form.controls['nome'].invalid">
+              <li *ngFor="let error of form.controls['nome'].getValidarMensagens()">
+        {{error}}
+               </li>
+              </ul>
+           </div>
+        </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label>Descriação<span>*</span></label>
+          <input class="form-control" name="descricao" [(ngModel)]="novoProduto.descricao"
+          formControlName="descricao" />
+          <ul class="text-danger list-unstyled"
+          *ngIf="(formSubmitted || form.controls['descricao'].dirty) &&
+          form.controls['descricao'].invalid">
+          <li *ngFor="let error of form.controls['descricao'].getValidarMensagens()">
+          {{error}}
+          </li>
+          </ul>
+          </div>
+          </div>
+        </div>
+        <div [hidden]="!submitted" class="col-sm-6">
+            <div class="alert alert-sm alert-success">{{ mensagem }}</div>
+            </div>
+        <br>
+        <hr>
+        <button class="btn btn-primary" type="submit"
+                [disabled]="formSubmitted && !form.valid"
+                [class.btn-secondary]="formSubmitted && !form.valid" style="margin-right: 10px;">
+          Salvar
+        </button>
+        <button type="reset" class="btn btn-warning" >Limpar</button>
+      </form>
+      </div>
+      </div>
+    
+    
+    
+    

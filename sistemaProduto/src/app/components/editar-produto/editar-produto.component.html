@@ -1,0 +1,28 @@
+
+<form  (ngSubmit)="onSubmit()">
+
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label>Nome</label>
+            <input class="form-control" name="nome" [(ngModel)]="produto.nome"  />
+         </div>
+      </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label>Descriação</label>
+        <input class="form-control" name="descricao" [(ngModel)]="produto.descricao"
+         />
+        </div>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <button class="btn btn-primary" type="submit">
+        Atualizar
+      </button>
+    </form>
+  
+  
+  
+  

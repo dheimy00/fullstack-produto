@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+*{
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.bg-primary{
+background-color: #ff6a07 !important;
+box-shadow: 2px 5px #c7c7c7;
+}
+
+img{
+    width: 50px;
+}
+
+

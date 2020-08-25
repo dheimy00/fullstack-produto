@@ -1,0 +1,31 @@
+<div class="container">  
+    <h2>Lista de produtos</h2> 
+    <hr>
+    <div  *ngIf="(produtos | async)?.length > 0" class="table-responsive">       
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th width="20%">Id</th>
+            <th width="20%">Nome</th>
+            <th width="20%">Descrição</th>
+            <th width="40%">Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produto of produtos | async">
+            <td class="align-middle">{{produto.id}}</td>
+            <td class="align-middle">{{produto.nome}}</td>
+            <td class="align-middle">{{produto.descricao}}</td>
+            <td class="align-middle">
+              <button (click)="editarProduto(produto.id)" class="btn btn-primary btn-sm" style="margin-right: 10px">Editar</button>
+              <button (click)="excluirProduto(produto.id)" class="btn btn-danger btn-sm">Excluir</button>
+              <button (click)="detalhesProduto(produto.id)" class="btn btn-info btn-sm" style="margin-left: 10px">Detalhes</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="img_produtovazio" *ngIf="!(produtos | async)?.length">
+        <img  src="assets/imagens/produtovazio.png" />
+        <h3>Produto vazio</h3></div>
+      </div>

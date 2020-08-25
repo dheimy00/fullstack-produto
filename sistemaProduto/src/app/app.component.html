@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-primary">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarTogglerDemo03"
+    aria-controls="navbarTogglerDemo03"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse ">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="#"
+          ><img class="imagens" src="assets/imagens/produto.png"
+        /></a>
+      </li>
+      <li>
+        <a
+          class="nav-link "
+          routerLink="/cadastro"
+          routerLinkActive="active text-white"
+         
+        >
+          Cadastro
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" 
+        routerLink="/produtos"
+          routerLinkActive="active  text-white"
+         >
+          Lista</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-3 mb-3 ">
+  <br>
+  <h2 style="text-align: center;">{{title}}</h2>
+  <hr>  
+  <div class="card">
+    <div class="card-body">
+  <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-copyright text-center py-3">
+      <span>Todos os direitos reservados 2019 @Dheimy</span>
+  </div>
+</footer>
+
